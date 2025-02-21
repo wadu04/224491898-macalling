@@ -19,7 +19,8 @@
                 <tr>
                     <th width="80px">No</th>
                     <th>Title</th>
-                    <th>content</th>
+                    <th>Subject</th>
+                    <th>Content</th>
                     <th width="250px">Action</th>
                 </tr>
             </thead>
@@ -29,6 +30,7 @@
                     <tr>
                         <td>{{ ++$i }}</td>
                         <td>{{ $note->title }}</td>
+                        <td>{{ $note->subject }}</td>
                         <td>{{ $note->content }}</td>
                         <td>
                             <form action="{{ route('notes.destroy',$note->id) }}" method="POST">

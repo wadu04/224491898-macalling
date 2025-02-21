@@ -18,12 +18,26 @@
                 <label for="inputTitle" class="form-label"><strong>Title:</strong></label>
                 <input
                     type="text"
-                    Title="Title"
+                    name="title"
                     value="{{ $note->title }}"
                     class="form-control @error('Title') is-invalid @enderror"
                     id="inputTitle"
                     placeholder="Title">
-                @error('Title')
+                @error('title')
+                    <div class="form-text text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="inputSubject" class="form-label"><strong>Subject:</strong></label>
+                <input
+                    type="text"
+                    name="subject"
+                    value="{{ $note->subject }}"
+                    class="form-control @error('Subject') is-invalid @enderror"
+                    id="inputSubject"
+                    placeholder="Subject">
+                @error('subject')
                     <div class="form-text text-danger">{{ $message }}</div>
                 @enderror
             </div>
@@ -33,7 +47,7 @@
                 <textarea
                     class="form-control @error('content') is-invalid @enderror"
                     style="height:150px"
-                    Title="content"
+                    name="content"
                     id="inputcontent"
                     placeholder="content">{{ $note->content }}</textarea>
                 @error('content')
